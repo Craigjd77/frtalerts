@@ -1,57 +1,81 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Audit Alert Versions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background-color: #f5f5f5;
-            color: #333;
+            color: #2c3e50;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
         .container {
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
             background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
             text-align: center;
-            color: #004080;
+            color: #0056b3;
+            font-weight: 600;
         }
         .version {
             padding: 20px;
             margin: 20px 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #f9f9f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .version:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         .version h2 {
             font-size: 20px;
-            color: #d9534f;
+            color: #e74c3c;
+            font-weight: 600;
         }
         .version p {
             margin-bottom: 10px;
+            color: #34495e;
         }
         a {
-            color: #004080;
+            color: #0056b3;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
         }
         a:hover {
             text-decoration: underline;
         }
         .feedback {
-            background-color: #f1f4f9;
+            background-color: #eef6fc;
             padding: 15px;
-            border-left: 4px solid #004080;
-            margin-top: 10px;
-            border-radius: 4px;
+            border-left: 5px solid #0056b3;
+            margin-top: 15px;
+            border-radius: 6px;
         }
         .best-grade {
-            background-color: #e0ffe0;
+            background-color: #e8f5e9;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            background: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-left: 4px solid #0056b3;
         }
     </style>
 </head>
@@ -59,8 +83,6 @@
     <div class="container">
         <h1>Document Audit Alert Versions</h1>
         <p>Below you can find the different versions of the Document Audit Alerts that have been iterated upon based on team feedback. Click on each version to view it in detail. Feedback from peers has also been summarized for each version to provide context to the changes made. I graded each version based on feedback, from A+ to C-.</p>
-
-       
 
         <div class="version best-grade">
             <h2>Final Version: Recommended Approach 1 </h2>
