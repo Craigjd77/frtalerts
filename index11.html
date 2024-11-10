@@ -121,9 +121,43 @@
     }
     .additional-info {
       border-left: 4px solid #004080;
-      background-color: #f1f4f9;
-      padding: 15px;
-      margin: 15px 0;
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .additional-info h3 {
+      color: #d9534f;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    .highlight {
+      background-color: #fff3cd;
+      padding: 10px;
+      border-left: 6px solid #ffa500;
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .highlight p {
+      margin: 10px 0;
+    }
+    .highlight ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .highlight ul li {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-bottom: 1px dashed #ffa500;
+    }
+    .note {
+      color: #d9534f;
+      font-weight: bold;
+      margin-top: 20px;
+      border-top: 2px solid #d9534f;
+      padding-top: 15px;
     }
   </style>
 </head>
@@ -144,24 +178,26 @@
     </div>
     <div class="additional-info">
       <h3>Important Information</h3>
-      <p>Acceptable documents may include custodian/broker statements, clearing house blotters, or other independent, third-party verification and/or confirmation of the transactions and/or holding. The statements must contain all of the following information:</p>
-      <ul>
-        <li>Account Name</li>
-        <li>An Account identifier (account number or other ID)</li>
-        <li>Security identifier (CUSIP/SEDOL/ISIN and security name)</li>
-        <li>Transaction date/holding date</li>
-        <li>Transaction type (buy/sell/corporate action)</li>
-        <li>Quantity of shares</li>
-        <li>Transaction price and gross/net amount</li>
-      </ul>
-      <p><strong>Please note:</strong> If you are providing a letter from a custodian/broker, the letter must include all of the information above as well as the following:</p>
+      <div class="highlight">
+        <p><strong>Acceptable Documents:</strong> Custodian/broker statements, clearing house blotters, or other independent, third-party verification and/or confirmation of the transactions and/or holding.</p>
+        <ul>
+          <li><strong>Account Name</strong></li>
+          <li><strong>Account Identifier:</strong> Account number or other ID</li>
+          <li><strong>Security Identifier:</strong> CUSIP/SEDOL/ISIN and security name</li>
+          <li><strong>Transaction Date/Holding Date</strong></li>
+          <li><strong>Transaction Type:</strong> Buy/sell/corporate action</li>
+          <li><strong>Quantity of Shares</strong></li>
+          <li><strong>Transaction Price and Gross/Net Amount</strong></li>
+        </ul>
+      </div>
+      <p class="note">Please Note: If you are providing a letter from a custodian/broker, the letter must include all of the information above as well as:</p>
       <ul>
         <li>Letter must be on custodian/broker letterhead</li>
         <li>Letter must include Contact Name and contact information (phone number and email) of authorized representative</li>
         <li>DocuSign by Authorized representative</li>
         <li>Must be either 1) Notarized or 2) Medallion Stamped</li>
       </ul>
-      <p><strong>Excel files are not accepted.</strong></p>
+      <p class="note" style="color: #ff0000;">Excel files are <u>not accepted</u>.</p>
     </div>
     <div class="special-instructions">
       <h3>Special Instructions</h3>
