@@ -49,34 +49,6 @@
         a:hover {
             text-decoration: underline;
         }
-        .preview {
-            display: block;
-            margin: 10px 0;
-            color: #8db445;
-            font-size: 14px;
-        }
-        .preview-window {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 200px;
-            background-color: #ffffff;
-            border: 1px solid #dcdcdc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            z-index: 10;
-        }
-        .version:hover .preview-window {
-            display: block;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
         .back-to-list {
             margin-top: 30px;
             text-align: center;
@@ -105,7 +77,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const versionList = document.getElementById("version-list");
-            const totalVersions = 17; // Change this number as needed
+            const totalVersions = 20; // Update this number as needed
 
             for (let i = 1; i <= totalVersions; i++) {
                 const versionDiv = document.createElement("div");
@@ -116,28 +88,7 @@
                 link.target = "_blank";
                 link.textContent = `Version ${i}`;
 
-                const previewSpan = document.createElement("span");
-                previewSpan.className = "preview";
-                previewSpan.textContent = "Preview: ";
-
-                const previewLink = document.createElement("a");
-                previewLink.href = `https://craigjd77.github.io/frtalerts/index${i}.html`;
-                previewLink.target = "_blank";
-                previewLink.textContent = "Click here";
-
-                previewSpan.appendChild(previewLink);
-
-                const previewWindow = document.createElement("div");
-                previewWindow.className = "preview-window";
-
-                const iframe = document.createElement("iframe");
-                iframe.src = `https://craigjd77.github.io/frtalerts/index${i}.html`;
-                previewWindow.appendChild(iframe);
-
                 versionDiv.appendChild(link);
-                versionDiv.appendChild(previewSpan);
-                versionDiv.appendChild(previewWindow);
-
                 versionList.appendChild(versionDiv);
             }
         });
