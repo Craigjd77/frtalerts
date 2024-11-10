@@ -55,6 +55,28 @@
             color: #8db445;
             font-size: 14px;
         }
+        .preview-window {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 200px;
+            background-color: #ffffff;
+            border: 1px solid #dcdcdc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            z-index: 10;
+        }
+        .version:hover .preview-window {
+            display: block;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
         .back-to-list {
             margin-top: 30px;
             text-align: center;
@@ -73,29 +95,52 @@
 <body>
     <div class="container">
         <h1>List of Document Audit Alert Versions</h1>
-        <div class="version-list">
-            <!-- Repeat the following block for each version you need -->
-            <div class="version">
-                <a href="https://craigjd77.github.io/frtalerts/index1.html" target="_blank">Version 1</a>
-                <span class="preview">Preview: <a href="https://craigjd77.github.io/frtalerts/index1.html" target="_blank">Click here</a></span>
-            </div>
-            <div class="version">
-                <a href="https://craigjd77.github.io/frtalerts/index2.html" target="_blank">Version 2</a>
-                <span class="preview">Preview: <a href="https://craigjd77.github.io/frtalerts/index2.html" target="_blank">Click here</a></span>
-            </div>
-            <div class="version">
-                <a href="https://craigjd77.github.io/frtalerts/index3.html" target="_blank">Version 3</a>
-                <span class="preview">Preview: <a href="https://craigjd77.github.io/frtalerts/index3.html" target="_blank">Click here</a></span>
-            </div>
-            <!-- Continue until Version 20 -->
-            <div class="version">
-                <a href="https://craigjd77.github.io/frtalerts/index20.html" target="_blank">Version 20</a>
-                <span class="preview">Preview: <a href="https://craigjd77.github.io/frtalerts/index20.html" target="_blank">Click here</a></span>
-            </div>
+        <div class="version-list" id="version-list">
+            <!-- Versions will be dynamically generated here -->
         </div>
         <div class="back-to-list">
             <a href="#">Back to Top</a>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const versionList = document.getElementById("version-list");
+            const totalVersions = 20; // Change this number as needed
+
+            for (let i = 1; i <= totalVersions; i++) {
+                const versionDiv = document.createElement("div");
+                versionDiv.className = "version";
+
+                const link = document.createElement("a");
+                link.href = `https://craigjd77.github.io/frtalerts/index${i}.html`;
+                link.target = "_blank";
+                link.textContent = `Version ${i}`;
+
+                const previewSpan = document.createElement("span");
+                previewSpan.className = "preview";
+                previewSpan.textContent = "Preview: ";
+
+                const previewLink = document.createElement("a");
+                previewLink.href = `https://craigjd77.github.io/frtalerts/index${i}.html`;
+                previewLink.target = "_blank";
+                previewLink.textContent = "Click here";
+
+                previewSpan.appendChild(previewLink);
+
+                const previewWindow = document.createElement("div");
+                previewWindow.className = "preview-window";
+
+                const iframe = document.createElement("iframe");
+                iframe.src = `https://craigjd77.github.io/frtalerts/index${i}.html`;
+                previewWindow.appendChild(iframe);
+
+                versionDiv.appendChild(link);
+                versionDiv.appendChild(previewSpan);
+                versionDiv.appendChild(previewWindow);
+
+                versionList.appendChild(versionDiv);
+            }
+        });
+    </script>
 </body>
 </html>
