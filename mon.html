@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Document Audit Alert Versions</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 30px;
+        }
+        .version-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .version {
+            padding: 15px;
+            background-color: #eef6fc;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s;
+        }
+        .version:hover {
+            transform: translateY(-5px);
+        }
+        a {
+            color: #0063a4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .preview-window {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 200px;
+            background-color: #ffffff;
+            border: 1px solid #dcdcdc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            z-index: 10;
+        }
+        .version:hover .preview-window {
+            display: block;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .back-to-list {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .back-to-list a {
+            color: #0063a4;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .back-to-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>List of Document Audit Alert Versions</h1>
+        <div class="version-list" id="version-list">
+            <!-- Versions will be dynamically generated here -->
+        </div>
+        <div class="back-to-list">
+            <a href="#">Back to Top</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const versionList = document.getElementById("version-list");
+            const totalVersions = 20; // Change this number as needed
+
+            for (let i = 1; i <= totalVersions; i++) {
+                const versionDiv = document.createElement("div");
+                versionDiv.className = "version";
+
+                const link = document.createElement("a");
+                link.href = `https://craigjd77.github.io/frtalerts/index${i}.html`;
+                link.target = "_blank";
+                link.textContent = `Version ${i}`;
+
+                const previewWindow = document.createElement("div");
+                previewWindow.className = "preview-window";
+
+                const iframe = document.createElement("iframe");
+                iframe.src = `https://craigjd77.github.io/frtalerts/index${i}.html`;
+                previewWindow.appendChild(iframe);
+
+                versionDiv.appendChild(link);
+                versionDiv.appendChild(previewWindow);
+
+                versionList.appendChild(versionDiv);
+            }
+        });
+    </script>
+</body>
+</html>
