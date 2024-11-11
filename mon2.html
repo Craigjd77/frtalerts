@@ -119,30 +119,28 @@
 <body>
     <div class="container">
         <h1>List of Document Audit Alert Versions</h1>
-        <p class="description">Below you can find the different versions of the Document Audit Alerts that have been iterated upon based on team feedback. Click on each version to view it in detail.</p>
-        <div class="version-list" id="version-list">
-            <!-- Versions will be dynamically generated here -->
-        </div>
+        <p class="description">Below you can find the different versions of the Document Audit Alerts that have been iterated upon based on team feedback. Click on each version to view it in detail. The versions highlighted in GREEN were used to come up with the final versions.</p>
         <div class="feedback-general">
             <h3>General Feedback and Notes</h3>
             <ul>
                 <li>Maggie T: "Don't include all the case information we include in other alerts, not needed. Focus on simplifying the alerts."
                 </li>
-                <li>Nick: "I like it to be simple and to the point, so every client knows exactly what to do."
-                </li>
+               
                 <li>Sam: "The deadline is the most important part. Highlight it upfront."
                 </li>
                 <li>Gabriella: "Will all the information be in the Excel attachment? Make it clear."
                 </li>
-                <li>Maggie T: "Matching the look and feel of existing alerts is key for consistency."
+                <li>Rich: "Try matching the look and feel of existing alerts to not increase scope"
                 </li>
                 <li>Dave W: "Make it clear what document formats are acceptable to avoid confusion."
                 </li>
                 <li>Sam: "Quickly understanding the ask in the request will be key for my clients."
                 </li>
+                <li>Nick: "I like it to be simple and to the point, so every client knows exactly what to do."
+                </li>
                 <li>Sam: "What about fair funds? Special Instructions should be used for Fair Funds language."
                 </li>
-                <li>Anna Dubey: "What will the reminder emails look like? Ensure there's a consistent structure for reminders."
+                <li>Anna: "What will the reminder emails look like? Ensure there's a consistent structure for reminders."
                 </li>
                 <li>Craig: "Highlighting critical information upfront is important so clients don't miss it."
                 </li>
@@ -152,9 +150,13 @@
                 </li>
             </ul>
         </div>
+        <div class="version-list" id="version-list">
+            <!-- Versions will be dynamically generated here -->
+        </div>
+       
         <div class="final-version-link">
             <h3>Best Version for Typical Document Request</h3>
-            <p>Based on all the feedback, we have consolidated the best practices into the final version. Click below to view it:</p>
+            <p>Based on all the feedback, I have consolidated the best practices into the final versions. Click below to view it:</p>
             <a href="https://craigjd77.github.io/frtalerts/final.html" target="_blank">View Final Version</a>
             <br>
             <a href="https://craigjd77.github.io/frtalerts/1remindfinal.html" target="_blank">View 1st Reminder Version</a>
@@ -163,14 +165,13 @@
             <br>
             <a href="https://craigjd77.github.io/frtalerts/FairFundFinal.html" target="_blank">View pre-filing Fair Fund Version</a>
         </div>
-        <div class="final-notes">
-            <h3>Notes and Addional Feedback</h3>
-            <p></p>
-        </div>
+     
  <div class="final-notes">
 <h3>Excel Attachments</h3>
-        <p>All Doc Requests will include an Excel attachment. The Excel will include a tab for the Case Details, a tab for the listing of the accounts being audited with any notes, and for some, there will be a tab with the actual transactions listed that require documents. Usually, it is just the class period purchases, sales, and holdings at the beginning and end of the class period, and a tab for the securities.</p>
-        <p>Each version includes a link to a sample Excel attachment that provides all relevant details for each request, including case info, list of securities, and list of impacted accounts with notes:</p>
+        <p>All Doc Requests will include an Excel attachment. </p>
+        
+            <p> Standard doc audits ask for class period purchases, sales, and holdings at the beginning and end of the class period: The Standard Doc Audit attachment will have 1) Case Details "Summary" Tab 2) An "Accounts" list tab 3) "Securities" list tab</p>
+        <p>For cases where specific transactions are being audited, a new tab called "Transactions" will be added with those details</p>
         <ul>
             <li><a href="Outreach Attachment - Post-Filing Doc Audit - Including Transactions.xlsx" target="_blank">Post Filing Doc Audit - Including Transactions</a></li>
             <li><a href="Outreach Attachment - Post-Filing Doc Audit - No Transactions.xlsx" target="_blank">Post Filing Doc Audit - No Transactions</a></li>
@@ -191,9 +192,9 @@
                 versionDiv.className = "version";
 
                 // Highlighting specific versions as good examples
-                if ([ 6, 13, 8, 11, 10, 18, 15, 19].includes(i)) {
+                if ([8, 11, 10, 18, 19].includes(i)) {
                     versionDiv.classList.add("highlighted");
-                } else if ([16, 5, 9, 17,18, 7, 9, 8, 4].includes(i)) {
+                } else if ([13, 16, 5, 9, 17,18, 7, 9, 8, 4].includes(i)) {
                     versionDiv.classList.add("disabled");
                 }
 
