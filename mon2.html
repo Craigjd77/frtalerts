@@ -12,7 +12,7 @@
             line-height: 1.6;
         }
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 40px auto;
             padding: 20px;
             background-color: #ffffff;
@@ -31,16 +31,29 @@
         }
         .version-list {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
         .version {
-            padding: 20px;
+            padding: 15px;
             background-color: #eef6fc;
             border-radius: 8px;
+            text-align: center;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             position: relative;
             transition: transform 0.3s;
+        }
+        .highlighted {
+            background-color: #d1e7dd; /* Light green background to highlight good versions */
+            border-left: 4px solid #198754; /* Dark green border for highlighted versions */
+        }
+        .disabled {
+            background-color: #f8d7da; /* Light red background to indicate disabled versions */
+            color: #6c757d; /* Greyed-out text */
+        }
+        .disabled a {
+            pointer-events: none;
+            color: #6c757d;
         }
         .version:hover {
             transform: translateY(-5px);
@@ -53,23 +66,15 @@
         a:hover {
             text-decoration: underline;
         }
-        .feedback {
+        .feedback-general {
             font-size: 14px;
-            text-align: left;
-            margin-top: 15px;
-            color: #333;
-            background-color: #ffffff;
+            margin-top: 30px;
             padding: 15px;
-            border-radius: 4px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        .excel-attachment {
-            margin-top: 10px;
-            font-size: 14px;
-            background-color: #f0f4f8;
-            padding: 10px;
-            border-radius: 5px;
+            background-color: #f9f9f9;
             border-left: 4px solid #004080;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #333;
         }
         .back-to-list {
             margin-top: 30px;
@@ -84,102 +89,115 @@
         .back-to-list a:hover {
             text-decoration: underline;
         }
+        .final-version-link {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #d1e7dd; /* Light green background to indicate importance */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .final-version-link a {
+            color: #004080;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 16px;
+        }
+        .final-version-link a:hover {
+            text-decoration: none;
+        }
+        .final-notes {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #004080;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Document Audit Alert Versions</h1>
-        <p class="description">Below you can find the different versions of the Document Audit Alerts that have been iterated upon based on team feedback. Click on each version to view it in detail. Feedback from peers has been summarized for each version to provide context to the changes made.</p>
+        <h1>List of Document Audit Alert Versions</h1>
+        <p class="description">Below you can find the different versions of the Document Audit Alerts that have been iterated upon based on team feedback. Click on each version to view it in detail.</p>
         <div class="version-list" id="version-list">
-            <!-- Version 8 -->
-            <div class="version">
-                <a href="https://craigjd77.github.io/frtalerts/index8.html" target="_blank">Version 8: Fair Fund Specific Instructions</a>
-                <div class="feedback">
-                    <strong>Feedback:</strong>
-                    <ul>
-                        <li><strong>Sam:</strong> "What about fair funds? Special Instructions should be used for Fair Funds language."</li>
-                        <li>Note: Special instructions for Fair Funds were incorporated to guide clients specifically through Fair Fund settlements, making the instructions case-specific.</li>
-                    </ul>
-                </div>
-                <div class="excel-attachment">
-                    <strong>Excel Attachment:</strong> <a href="https://craigjd77.github.io/frtalerts/fairfund_attachment.xlsx" target="_blank">Download Excel for Fair Fund Details</a>
-                </div>
-            </div>
-            <!-- Version 11 -->
-            <div class="version">
-                <a href="https://craigjd77.github.io/frtalerts/index11.html" target="_blank">Version 11: Enhanced Clarity on Documentation</a>
-                <div class="feedback">
-                    <strong>Feedback:</strong>
-                    <ul>
-                        <li><strong>Dave W:</strong> "Ensure every detail of the documentation requirements is easily visible."</li>
-                        <li><strong>Craig:</strong> "This version is my favorite version!"</li>
-                        <li>Note: This version ensured that every detail of the documentation requirements was clearly visible, reducing the risk of clients missing key instructions.</li>
-                    </ul>
-                </div>
-                <div class="excel-attachment">
-                    <strong>Excel Attachment:</strong> <a href="https://craigjd77.github.io/frtalerts/documentation_attachment.xlsx" target="_blank">Download Excel for Documentation Details</a>
-                </div>
-            </div>
-            <!-- Version 19 -->
-            <div class="version">
-                <a href="https://craigjd77.github.io/frtalerts/index19.html" target="_blank">Version 19: Streamlined Formatting</a>
-                <div class="feedback">
-                    <strong>Feedback:</strong>
-                    <ul>
-                        <li><strong>Nick:</strong> "Simplify and make it to the point so that every client knows exactly what to do."</li>
-                        <li>Note: Focus was placed on making the structure more straightforward, allowing clients to understand requirements quickly.</li>
-                    </ul>
-                </div>
-                <div class="excel-attachment">
-                    <strong>Excel Attachment:</strong> <a href="https://craigjd77.github.io/frtalerts/streamlined_attachment.xlsx" target="_blank">Download Excel for Streamlined Details</a>
-                </div>
-            </div>
-            <!-- Version 20 -->
-            <div class="version">
-                <a href="https://craigjd77.github.io/frtalerts/index20.html" target="_blank">Version 20: Final Iteration for Clarity and Readability</a>
-                <div class="feedback">
-                    <strong>Feedback:</strong>
-                    <ul>
-                        <li><strong>Craig:</strong> "Highlighting critical information upfront helps prevent clients from missing it."</li>
-                        <li>Note: Critical information was highlighted at the top, making it easier for clients to act promptly.</li>
-                    </ul>
-                </div>
-                <div class="excel-attachment">
-                    <strong>Excel Attachment:</strong> <a href="https://craigjd77.github.io/frtalerts/final_attachment.xlsx" target="_blank">Download Excel for Final Details</a>
-                </div>
-            </div>
-            <!-- Tax Request Version -->
-            <div class="version">
-                <a href="https://craigjd77.github.io/frtalerts/taxrequest.html" target="_blank">Tax Document Request: Eagle Bancorp</a>
-                <div class="feedback">
-                    <strong>Feedback:</strong>
-                    <ul>
-                        <li><strong>Team:</strong> "Ensure clients understand the urgency of obtaining W8/W9 forms."</li>
-                        <li>Note: Emphasis was added regarding the use of current forms with valid signatures, ensuring compliance with documentation standards.</li>
-                    </ul>
-                </div>
-                <div class="excel-attachment">
-                    <strong>Excel Attachment:</strong> <a href="https://craigjd77.github.io/frtalerts/taxdoc_attachment.xlsx" target="_blank">Download Excel for Account Details</a>
-                </div>
-            </div>
-            <!-- Version 18 -->
-            <div class="version">
-                <a href="https://craigjd77.github.io/frtalerts/index18.html" target="_blank">Version 18: Added Deadline Emphasis</a>
-                <div class="feedback">
-                    <strong>Feedback:</strong>
-                    <ul>
-                        <li><strong>Sam:</strong> "The deadline needs to stand out more to ensure it's not missed."</li>
-                        <li>Note: The deadline was made more prominent to ensure clients acted on it immediately.</li>
-                    </ul>
-                </div>
-                <div class="excel-attachment">
-                    <strong>Excel Attachment:</strong> <a href="https://craigjd77.github.io/frtalerts/deadline_attachment.xlsx" target="_blank">Download Excel for Deadline Details</a>
-                </div>
-            </div>
+            <!-- Versions will be dynamically generated here -->
+        </div>
+        <div class="feedback-general">
+            <h3>General Feedback and Notes</h3>
+            <ul>
+                <li>Maggie T: "Don't include all the case information we include in other alerts, not needed. Focus on simplifying the alerts."
+                </li>
+                <li>Nick: "I like it to be simple and to the point, so every client knows exactly what to do."
+                </li>
+                <li>Sam: "The deadline is the most important part. Highlight it upfront."
+                </li>
+                <li>Gabriella: "Will all the information be in the Excel attachment? Make it clear."
+                </li>
+                <li>Maggie T: "Matching the look and feel of existing alerts is key for consistency."
+                </li>
+                <li>Dave W: "Make it clear what document formats are acceptable to avoid confusion."
+                </li>
+                <li>Sam: "Quickly understanding the ask in the request will be key for my clients."
+                </li>
+                <li>Sam: "What about fair funds? Special Instructions should be used for Fair Funds language."
+                </li>
+                <li>Anna Dubey: "What will the reminder emails look like? Ensure there's a consistent structure for reminders."
+                </li>
+                <li>Craig: "Highlighting critical information upfront is important so clients don't miss it."
+                </li>
+                <li>Dave W: "Ensure every detail of the documentation requirements is visible and organized well."
+                </li>
+                <li>Dave W: "Consider revising the header style and simplifying return instructions."
+                </li>
+            </ul>
+        </div>
+        <div class="final-version-link">
+            <h3>Best Version for Typical Document Request</h3>
+            <p>Based on all the feedback, we have consolidated the best practices into the final version. Click below to view it:</p>
+            <a href="https://craigjd77.github.io/frtalerts/final.html" target="_blank">View Final Version</a>
+            <a href="https://craigjd77.github.io/frtalerts/1remindfinal.html" target="_blank">View 1st Reminder Version</a>
+            <a href="https://craigjd77.github.io/frtalerts/pastduefinal.html" target="_blank">View Past Due Version</a>
+            <a href="https://craigjd77.github.io/frtalerts/FairFundFinal.html" target="_blank">View pre-filing Fair Fund Version</a>
+        </div>
+        <div class="final-notes">
+            <h3>Notes on Why This Version is the Best</h3>
+            <p>You can add your own notes here later to explain why this version is considered the best based on client and internal feedback.</p>
         </div>
         <div class="back-to-list">
             <a href="#">Back to Top</a>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const versionList = document.getElementById("version-list");
+            const totalVersions = 20;
+
+            for (let i = 1; i <= totalVersions; i++) {
+                const versionDiv = document.createElement("div");
+                versionDiv.className = "version";
+
+                // Highlighting specific versions as good examples
+                if ([ 6, 13, 8, 11, 10, 18, 15, 19].includes(i)) {
+                    versionDiv.classList.add("highlighted");
+                } else if ([16, 5, 9, 17,18, 7, 9, 8, 4].includes(i)) {
+                    versionDiv.classList.add("disabled");
+                }
+
+                const link = document.createElement("a");
+                link.href = `https://craigjd77.github.io/frtalerts/index${i}.html`;
+                link.target = "_blank";
+                link.textContent = `Version ${i}`;
+
+                // Disable links for Versions 16 and 17
+                if ([16, 17].includes(i)) {
+                    link.href = "#";
+                }
+
+                versionDiv.appendChild(link);
+                versionList.appendChild(versionDiv);
+            }
+        });
+    </script>
 </body>
 </html>
